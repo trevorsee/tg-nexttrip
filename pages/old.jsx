@@ -30,11 +30,11 @@ export const Home = ({ data }) => {
 
   useEffect(() => {
     setQuery({ direction: "", stop: "" });
-  }, [route]);
+  }, [route, setQuery]);
 
   useEffect(() => {
     setQuery({ stop: "" });
-  }, [direction]);
+  }, [direction, setQuery]);
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
@@ -58,7 +58,9 @@ export const Home = ({ data }) => {
                 select an option
               </option>
               {data.map(({ route_id, route_label }) => (
-                <option value={route_id}>{route_label}</option>
+                <option key={route_id} value={route_id}>
+                  {route_label}
+                </option>
               ))}
             </select>
           </label>
@@ -77,7 +79,9 @@ export const Home = ({ data }) => {
                 </option>
                 {find(data, ["route_id", route]).directions.map(
                   ({ direction_id, direction_name }) => (
-                    <option value={direction_id}>{direction_name}</option>
+                    <option key={direction_id} value={direction_id}>
+                      {direction_name}
+                    </option>
                   )
                 )}
               </select>
@@ -100,7 +104,9 @@ export const Home = ({ data }) => {
                   find(data, ["route_id", route]).directions,
                   "direction_id"
                 )[direction].stops.map(({ place_code, description }) => (
-                  <option value={place_code}>{description}</option>
+                  <option key={place_code} value={place_code}>
+                    {description}
+                  </option>
                 ))}
               </select>
             </label>

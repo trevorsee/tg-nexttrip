@@ -13,6 +13,7 @@ const DirectionPage = ({ data }) => {
         <div className="flex flex-col w-full max-w-2xl">
           {data.map(({ place_code, description }) => (
             <ButtonLink
+              key={place_code}
               href={`/${route}/${direction}/${place_code}`}
               label={description}
             />

@@ -16,8 +16,8 @@ const StopPage = ({ data }) => {
       {alerts && alerts.length > 0 && (
         <>
           <div>
-            {alerts.map(({ alert_text, stop_closed }) => (
-              <p>
+            {alerts.map(({ alert_text, stop_closed }, i) => (
+              <p key={i}>
                 {stop_closed && <span>STOP CLOSED</span>} {alert_text}
               </p>
             ))}
@@ -27,8 +27,8 @@ const StopPage = ({ data }) => {
       )}
       {departures && departures.length > 0 ? (
         <div>
-          {departures.map(({ actual, departure_text, description }) => (
-            <p>
+          {departures.map(({ actual, departure_text, description }, i) => (
+            <p key={i}>
               {actual && <span>*</span>} {description} {departure_text}
             </p>
           ))}

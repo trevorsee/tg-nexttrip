@@ -13,8 +13,8 @@ export const Home = ({ data }) => {
   };
   const [{ search }, setQuery] = useQueryString(
     {
-      pathname: router.pathname,
-      search: trimStart(router.asPath, router.pathname),
+      pathname: router?.pathname,
+      search: trimStart(router?.asPath, router?.pathname),
     },
     updateQuery
   );
@@ -32,7 +32,7 @@ export const Home = ({ data }) => {
         </label>
 
         <div className="flex flex-col w-full max-w-2xl">
-          {filterByQuery(data, search, "route_label").map(
+          {filterByQuery(data, search, "route_label")?.map(
             ({ route_id, route_label }) => (
               <ButtonLink
                 key={route_id}
