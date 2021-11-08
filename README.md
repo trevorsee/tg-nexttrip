@@ -4,8 +4,6 @@
 
 Live at [https://target-bus-nine.vercel.app/](https://target-bus-nine.vercel.app/):
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
-
 ## Running locally
 
 _In dev mode_
