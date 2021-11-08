@@ -1,13 +1,7 @@
-import { useRouter } from "next/router";
-
 import Layout from "@/components/Layout/Layout";
 
 const StopPage = ({ data }) => {
-  const router = useRouter();
-  const { stop, direction, route } = router.query;
-
   const { stops, alerts, departures } = data;
-  console.log(data);
 
   return (
     <Layout>
